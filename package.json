@@ -1,0 +1,29 @@
+{
+  "name": "whitespace-html-parser",
+  "description": "basic parser for whitespace-significant html",
+  "version": "0.0.0",
+  "author": "jescalan",
+  "ava": {
+    "verbose": "true"
+  },
+  "bugs": "https://github.com/jescalan/whitespace-html-parser/issues",
+  "devDependencies": {
+    "ava": "0.15.x",
+    "coveralls": "2.x",
+    "nyc": "6.x",
+    "standard": "7.x"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "homepage": "https://github.com/jescalan/whitespace-html-parser",
+  "license": "MIT",
+  "main": "lib",
+  "repository": "jescalan/whitespace-html-parser",
+  "scripts": {
+    "test": "ava",
+    "lint": "standard",
+    "coverage": "nyc ava",
+    "coveralls": "nyc --reporter=lcov ava && cat ./coverage/lcov.info | coveralls"
+  }
+}
