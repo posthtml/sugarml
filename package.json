@@ -2,7 +2,7 @@
   "name": "html-whitespace-parser",
   "description": "basic parser for whitespace-significant html",
   "version": "0.0.0",
-  "author": "jescalan",
+  "author": "Jeff Escalante",
   "ava": {
     "verbose": "true"
   },

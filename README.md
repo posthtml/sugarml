@@ -1,6 +1,6 @@
 # html-whitespace-parser
 
-[![npm](http://img.shields.io/npm/v/html-whitespace-parser.svg?style=flat)](https://badge.fury.io/js/html-whitespace-parser) [![tests](http://img.shields.io/travis/jescalan/html-whitespace-parser/master.svg?style=flat)](https://travis-ci.org/jescalan/html-whitespace-parser) [![dependencies](http://img.shields.io/david/jescalan/html-whitespace-parser.svg?style=flat)](https://david-dm.org/jescalan/html-whitespace-parser) [![coverage](http://img.shields.io/coveralls/jescalan/html-whitespace-parser.svg?style=flat)](https://coveralls.io/github/jescalan/html-whitespace-parser)
+[![npm](http://img.shields.io/npm/v/html-whitespace-parser.svg?style=flat)](https://badge.fury.io/js/html-whitespace-parser) [![tests](http://img.shields.io/travis/static-dev/html-whitespace-parser/master.svg?style=flat)](https://travis-ci.org/static-dev/html-whitespace-parser) [![dependencies](http://img.shields.io/david/static-dev/html-whitespace-parser.svg?style=flat)](https://david-dm.org/static-dev/html-whitespace-parser) [![coverage](http://img.shields.io/coveralls/static-dev/html-whitespace-parser.svg?style=flat)](https://coveralls.io/github/static-dev/html-whitespace-parser)
 
 basic parser for whitespace-significant html
 
