@@ -1,6 +1,6 @@
-# whitespace-html-parser
+# html-whitespace-parser
 
-[![npm](http://img.shields.io/npm/v/whitespace-html-parser.svg?style=flat)](https://badge.fury.io/js/whitespace-html-parser) [![tests](http://img.shields.io/travis/jescalan/whitespace-html-parser/master.svg?style=flat)](https://travis-ci.org/jescalan/whitespace-html-parser) [![dependencies](http://img.shields.io/david/jescalan/whitespace-html-parser.svg?style=flat)](https://david-dm.org/jescalan/whitespace-html-parser) [![coverage](http://img.shields.io/coveralls/jescalan/whitespace-html-parser.svg?style=flat)](https://coveralls.io/github/jescalan/whitespace-html-parser)
+[![npm](http://img.shields.io/npm/v/html-whitespace-parser.svg?style=flat)](https://badge.fury.io/js/html-whitespace-parser) [![tests](http://img.shields.io/travis/jescalan/html-whitespace-parser/master.svg?style=flat)](https://travis-ci.org/jescalan/html-whitespace-parser) [![dependencies](http://img.shields.io/david/jescalan/html-whitespace-parser.svg?style=flat)](https://david-dm.org/jescalan/html-whitespace-parser) [![coverage](http://img.shields.io/coveralls/jescalan/html-whitespace-parser.svg?style=flat)](https://coveralls.io/github/jescalan/html-whitespace-parser)
 
 basic parser for whitespace-significant html
 
@@ -16,7 +16,7 @@ This is my first time writing a lex/parser, and the code is heavily commented. P
 
 ### Installation
 
-`npm install whitespace-html-parser -S`
+`npm install html-whitespace-parser -S`
 
 > **Note:** This project is compatible with node v6+ only
 
@@ -41,7 +41,7 @@ Pipeline:
 
 ```js
 const posthtml = require('posthtml')
-const whitespace = require('whitespace-html-parser')
+const whitespace = require('html-whitespace-parser')
 const fs = require('fs')
 
 const html = fs.readFileSync('./index.sml', 'utf8')
