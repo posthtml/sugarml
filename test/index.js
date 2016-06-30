@@ -1,13 +1,18 @@
 const parser = require('..')
 const fs = require('fs')
-const util = require('util')
 const path = require('path')
 const test = require('ava')
+const posthtml = require('posthtml')
 const fixtures = path.join(__dirname, 'fixtures')
 
-test('parser', (t) => {
-  const html = fs.readFileSync(path.join(fixtures, 'nesting.html'), 'utf8')
-  console.log(util.inspect(parser(html), { showHidden: false, depth: null, colors: true }))
+test('works with posthtml', (t) => {
+  const html = fs.readFileSync(path.join(fixtures, 'simple.html'), 'utf8')
+  const expected = fs.readFileSync(path.join(fixtures, 'expected/simple.html'), 'utf8')
+  return posthtml()
+    .process(html, { parser })
+    .then((res) => {
+      t.is(res.html, expected.trim())
+    })
 })
 
 test.skip('lexer', (t) => {

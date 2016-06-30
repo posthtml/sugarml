@@ -11,6 +11,7 @@
     "ava": "0.15.x",
     "coveralls": "2.x",
     "nyc": "6.x",
+    "posthtml": "jescalan/posthtml#parser-config",
     "standard": "7.x"
   },
   "engines": {

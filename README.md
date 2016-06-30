@@ -25,7 +25,7 @@ This is my first time writing a lex/parser, and the code is heavily commented. P
 Input:
 
 ```html
-doctype(html)
+doctype html
 html
   head
     title Testing
@@ -54,7 +54,7 @@ posthtml()
 Output:
 
 ```html
-<doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Testing</title>
