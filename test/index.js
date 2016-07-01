@@ -22,14 +22,16 @@ test('id', (t) => {
   return compare(t, 'id')
 })
 
-test.skip('class', (t) => {
-  const html = fs.readFileSync(path.join(fixtures, 'class.html'), 'utf8')
-  console.log(parser(html))
+test('class', (t) => {
+  return compare(t, 'class')
 })
 
-test.skip('comment', (t) => {
-  const html = fs.readFileSync(path.join(fixtures, 'comments.html'), 'utf8')
-  console.log(parser(html))
+test('class and id', (t) => {
+  return compare(t, 'class-id')
+})
+
+test('comment', (t) => {
+  return compare(t, 'comments')
 })
 
 function compare (t, name, log) {
