@@ -4,6 +4,7 @@ const path = require('path')
 const test = require('ava')
 const posthtml = require('posthtml')
 const fixtures = path.join(__dirname, 'fixtures')
+// const {inspect} = require('util')
 
 test('works with posthtml', (t) => {
   const html = fs.readFileSync(path.join(fixtures, 'simple.html'), 'utf8')
