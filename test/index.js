@@ -6,29 +6,20 @@ const posthtml = require('posthtml')
 const fixtures = path.join(__dirname, 'fixtures')
 // const {inspect} = require('util')
 
-test('works with posthtml', (t) => {
-  const html = fs.readFileSync(path.join(fixtures, 'simple.html'), 'utf8')
-  const expected = fs.readFileSync(path.join(fixtures, 'expected/simple.html'), 'utf8')
-  return posthtml()
-    .process(html, { parser })
-    .then((res) => {
-      t.is(res.html, expected.trim())
-    })
+test('basic coverage example', (t) => {
+  return compare(t, 'simple')
 })
 
-test.skip('lexer', (t) => {
-  const html = fs.readFileSync(path.join(fixtures, 'simple.html'), 'utf8')
-  console.log(parser.lex(html))
+test('attributes', (t) => {
+  return compare(t, 'attributes')
 })
 
-test.skip('pipe', (t) => {
-  const html = fs.readFileSync(path.join(fixtures, 'pipe.html'), 'utf8')
-  console.log(parser(html))
+test('pipe', (t) => {
+  return compare(t, 'pipe')
 })
 
-test.skip('id', (t) => {
-  const html = fs.readFileSync(path.join(fixtures, 'id.html'), 'utf8')
-  console.log(parser(html))
+test('id', (t) => {
+  return compare(t, 'id')
 })
 
 test.skip('class', (t) => {
@@ -40,3 +31,21 @@ test.skip('comment', (t) => {
   const html = fs.readFileSync(path.join(fixtures, 'comments.html'), 'utf8')
   console.log(parser(html))
 })
+
+function compare (t, name, log) {
+  let html, expected
+
+  try {
+    html = fs.readFileSync(path.join(fixtures, `${name}.html`), 'utf8')
+    expected = fs.readFileSync(path.join(fixtures, `expected/${name}.html`), 'utf8')
+  } catch (err) {
+    console.error(err)
+  }
+
+  return posthtml()
+    .process(html, { parser })
+    .then((res) => {
+      if (log) console.log(res.html)
+      t.is(res.html, expected.trim())
+    })
+}
