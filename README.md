@@ -51,7 +51,7 @@ const fs = require('fs')
 const html = fs.readFileSync('./index.sml', 'utf8')
 
 posthtml()
-  .process({ parser: whitespace })
+  .process(html, { parser: whitespace })
   .then((res) => console.log(res.html))
 ```
 
