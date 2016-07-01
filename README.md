@@ -22,6 +22,10 @@ This is my first time writing a lex/parser, and the code is heavily commented. P
 
 ### Usage
 
+This parser is very loose with its rules and standards. It is not responsible for enforcing good style or conventions, it's simply responsible for compiling your code. This means that you can use all sorts of invalid characters in attribute and tag names, and indentation rules are extremely loose.
+
+As far as indentation rules, as long as one line is indented with more characters than the last, it will be nested. It doesn't matter if the number of characters that you use is consistent, or if they are spaces or tabs, or anything else. It's just the number of space characters used to indent, that's it. So you can get away with very messy code, if you want, but that's what linters are for.
+
 Input:
 
 ```html
