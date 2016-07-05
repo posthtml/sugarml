@@ -1,6 +1,6 @@
-# Contributing to whitespace-html-parser
+# Contributing to sugarml
 
-Hello there! First of all, thanks for being interested in whitespace-html-parser and helping out. We all think you are awesome, and by contributing to open source projects, you are making the world a better place. That being said, there are a few ways to make the process of contributing code to whitespace-html-parser smoother, detailed below:
+Hello there! First of all, thanks for being interested in sugarml and helping out. We all think you are awesome, and by contributing to open source projects, you are making the world a better place. That being said, there are a few ways to make the process of contributing code to sugarml smoother, detailed below:
 
 ### Filing Issues
 

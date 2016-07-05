@@ -1,8 +1,8 @@
-# html-whitespace-parser
+# SugarML
 
-[![npm](http://img.shields.io/npm/v/html-whitespace-parser.svg?style=flat)](https://badge.fury.io/js/html-whitespace-parser) [![tests](http://img.shields.io/travis/static-dev/html-whitespace-parser/master.svg?style=flat)](https://travis-ci.org/static-dev/html-whitespace-parser) [![dependencies](http://img.shields.io/david/static-dev/html-whitespace-parser.svg?style=flat)](https://david-dm.org/static-dev/html-whitespace-parser) [![coverage](http://img.shields.io/coveralls/static-dev/html-whitespace-parser.svg?style=flat)](https://coveralls.io/github/static-dev/html-whitespace-parser)
+[![npm](http://img.shields.io/npm/v/sugarml.svg?style=flat)](https://badge.fury.io/js/sugarml) [![tests](http://img.shields.io/travis/posthtml/sugarml/master.svg?style=flat)](https://travis-ci.org/posthtml/sugarml) [![dependencies](http://img.shields.io/david/posthtml/sugarml.svg?style=flat)](https://david-dm.org/posthtml/sugarml) [![coverage](http://img.shields.io/coveralls/posthtml/sugarml.svg?style=flat)](https://coveralls.io/github/posthtml/sugarml)
 
-A basic parser for whitespace-significant html.
+A simple parser for whitespace-significant html, intended for use with [posthtml](https://github.com/posthtml/posthtml).
 
 > **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details.
 
@@ -18,7 +18,7 @@ The source is not very long or complicated and is heavily commented for clarity.
 
 ### Installation
 
-`npm install html-whitespace-parser -S`
+`npm install sugarml -S`
 
 > **Note:** This project is compatible with node v6+ only
 
@@ -46,13 +46,13 @@ html
 
 ```js
 const posthtml = require('posthtml')
-const whitespace = require('html-whitespace-parser')
+const sugarml = require('sugarml')
 const fs = require('fs')
 
 const html = fs.readFileSync('./index.sml', 'utf8')
 
 posthtml()
-  .process(html, { parser: whitespace })
+  .process(html, { parser: sugarml })
   .then((res) => console.log(res.html))
 ```
 
@@ -207,7 +207,7 @@ This would render as:
 <p>Here's some text <strong>and some bold text</strong> ...and some more text</p>
 ```
 
-For any type of content transforms that are more complex than this, we recommend checking out [posthtml-content](https://github.com/static-dev/posthtml-content).
+For any type of content transforms that are more complex than this, we recommend checking out [posthtml-content](https://github.com/posthtml/posthtml-content).
 
 #### Doctypes
 
