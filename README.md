@@ -46,26 +46,6 @@ npm i -S sugarml
 
 <h2 align="center">Usage</h2>
 
-**Input:**
-
-```html
-doctype html
-html
-  head
-    title Testing
-  body#index
-    h1 Hello world!
-    p.intro Wow what a great little language! Some features:
-    ul(data-list='yep' @sortable)
-      li: a(href='#') whitespace significant!
-      li: a(href='#') simple classes and ids!
-    footer
-      | Thanks for visiting
-      span see you next time!
-```
-
-**Pipeline:**
-
 ```js
 'use strict'
 
@@ -80,31 +60,6 @@ posthtml()
   .process(html, { parser: sugarml })
   .then((result) => console.log(result.html))
 ```
-
-**Output:**
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Testing</title>
-  </head>
-  <body id='index'>
-    <h1>Hello world!</h1>
-    <p class='intro'>Wow what a great little language! Some features:</p>
-    <ul data-list='yep' @sortable>
-      <li><a href='#'>whitespace significant!</a></li>
-      <li><a href='#'>simple classes and ids!</a></li>
-    </ul>
-    <footer>
-      Thanks for visiting
-      <span>see you next time!</span>
-    </footer>
-  </body>
-</html>
-```
-
-<h2 align="center">Usage</h2>
 
 This parser is very loose with its rules and standards. It is not responsible for enforcing good style or conventions, it's simply responsible for compiling your code. This means that you can use all sorts of invalid characters in attribute and tag names, and indentation rules are extremely loose.
 
