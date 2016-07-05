@@ -1,12 +1,32 @@
-# SugarML <img align="right" width="220" height="200" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
+[![NPM][npm]][npm-url]
+[![Deps][deps]][deps-url]
+[![Tests][travis]][travis-url]
+[![Coverage][cover]][cover-url]
+[![Standard Code Style][style]][style-url]
 
-[![npm](http://img.shields.io/npm/v/sugarml.svg?style=flat)](https://badge.fury.io/js/sugarml) [![tests](http://img.shields.io/travis/posthtml/sugarml/master.svg?style=flat)](https://travis-ci.org/posthtml/sugarml) [![dependencies](http://img.shields.io/david/posthtml/sugarml.svg?style=flat)](https://david-dm.org/posthtml/sugarml) [![coverage](http://img.shields.io/coveralls/posthtml/sugarml.svg?style=flat)](https://coveralls.io/github/posthtml/sugarml)
+<div align="center">
+  <img width="220" height="200" title="PostHTML" src="http://posthtml.github.io/posthtml/logo.svg">
+  <h1>SugarML<h1>
+  <p>PostHTML Sugar Syntax</p>
+</div>
+
+[npm]: http://img.shields.io/npm/v/sugarml.svg?style=flat
+[npm-url]: https://badge.fury.io/js/sugarml
+
+[deps]: http://img.shields.io/david/posthtml/sugarml.svg?style=flat
+[deps-url]: https://david-dm.org/posthtml/sugarml
+
+[travis]: http://img.shields.io/travis/posthtml/sugarml/master.svg?style=flat
+[travis-url]: https://travis-ci.org/posthtml/sugarml
+
+[cover]: http://img.shields.io/coveralls/posthtml/sugarml.svg?style=flat
+[cover-url]: https://coveralls.io/github/posthtml/sugarml
 
 A simple parser for whitespace-significant html, intended for use with [posthtml](https://github.com/posthtml/posthtml).
 
 > **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details.
 
-### Why should you care?
+<h2 align="center">Why should you care?</h2>
 
 If you are interesting in using posthtml, but enjoy whitespace-significant html syntax, like jade, slim, etc. You have come to the right place. Alternately, if you are simply looking for a strong alternative to jade for any other reason, read on.
 
@@ -16,13 +36,15 @@ If you are looking for the ability to add expressions, variables, loops, layouts
 
 The source is not very long or complicated and is heavily commented for clarity. Take a look and feel free to contribute!
 
-### Installation
+<h2 align="center">Install</h2>
 
-`npm install sugarml -S`
+```bash
+npm i -S sugarml
+```
 
 > **Note:** This project is compatible with node v6+ only
 
-### Basic Usage
+<h2 align="center">Usage</h2>
 
 **Input:**
 
@@ -45,15 +67,18 @@ html
 **Pipeline:**
 
 ```js
-const posthtml = require('posthtml')
-const sugarml = require('sugarml')
-const fs = require('fs')
+'use strict'
 
-const html = fs.readFileSync('./index.sml', 'utf8')
+import { readFileSync } from 'fs'
+
+import posthtml from 'posthtml'
+import sugarml from 'sugarml'
+
+const html = readFileSync('./index.sml', 'utf8')
 
 posthtml()
   .process(html, { parser: sugarml })
-  .then((res) => console.log(res.html))
+  .then((result) => console.log(result.html))
 ```
 
 **Output:**
@@ -79,7 +104,7 @@ posthtml()
 </html>
 ```
 
-### Syntax
+<h2 align="center">Usage</h2>
 
 This parser is very loose with its rules and standards. It is not responsible for enforcing good style or conventions, it's simply responsible for compiling your code. This means that you can use all sorts of invalid characters in attribute and tag names, and indentation rules are extremely loose.
 
@@ -107,7 +132,7 @@ This would be compiled into the following html output:
 
 _As long as one line is indented with more characters than the last, it will be nested_. It doesn't matter if the number of characters that you use is consistent, or if they are spaces or tabs, or anything else. It's just the number of space characters used to indent, that's it. So you can get away with very messy code, if you want, but that's what linters are for.
 
-### Tags
+#### Tags
 
 A tag is written simply as the name of the tag. Tag names must start with a letter, then after that can contain any character other than `#`, `.`, `(`, `:`, or a space/tab. These character limitation are in place solely because of the language's syntax requirements.
 
@@ -218,7 +243,90 @@ doctype html >>> <!DOCTYPE html>
 doctype HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd" >>> <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 ```
 
-### License & Contributing
+<h2 align="center">Example</h2>
+
+**Input:**
+
+```html
+doctype html
+html
+  head
+    title Testing
+  body#index
+    h1 Hello world!
+    p.intro Wow what a great little language! Some features:
+    ul(data-list='yep' @sortable)
+      li: a(href='#') whitespace significant!
+      li: a(href='#') simple classes and ids!
+    footer
+      | Thanks for visiting
+      span see you next time!
+```
+
+**Setup:**
+
+```js
+'use strict'
+
+import { readFileSync } from 'fs'
+
+import posthtml from 'posthtml'
+import sugarml from 'sugarml'
+
+const html = readFileSync('./index.sml', 'utf8')
+
+posthtml()
+  .process(html, { parser: sugarml })
+  .then((result) => console.log(result.html))
+```
+
+**Output:**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testing</title>
+  </head>
+  <body id='index'>
+    <h1>Hello world!</h1>
+    <p class='intro'>Wow what a great little language! Some features:</p>
+    <ul data-list='yep' @sortable>
+      <li><a href='#'>whitespace significant!</a></li>
+      <li><a href='#'>simple classes and ids!</a></li>
+    </ul>
+    <footer>
+      Thanks for visiting
+      <span>see you next time!</span>
+    </footer>
+  </body>
+</html>
+```
+<h2 align="center">Maintainer</h2>
+
+| [![Jeff Escalante][maintainer]][maintainer-url] |
+|-------------------------------------------------|
+| [Jeff Escalante][maintainer-url]                |
+
+<h2 align="center">LICENSE & CONTRIBUTING</h2>
 
 - Details on the license [can be found here](LICENSE.md)
-- Details on running tests and contributing [can be found here](contributing.md)
+- Details on running tests and contributing [can be found here](CONTRIBUTING.md)
+
+[npm]: http://img.shields.io/npm/v/sugarml.svg?style=flat
+[npm-url]: https://badge.fury.io/js/sugarml
+
+[deps]: http://img.shields.io/david/posthtml/sugarml.svg?style=flat
+[deps-url]: https://david-dm.org/posthtml/sugarml
+
+[style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
+[style-url]: http://standardjs.com/
+
+[travis]: http://img.shields.io/travis/posthtml/sugarml/master.svg?style=flat
+[travis-url]: https://travis-ci.org/posthtml/sugarml
+
+[cover]: http://img.shields.io/coveralls/posthtml/sugarml.svg?style=flat
+[cover-url]: https://coveralls.io/github/posthtml/sugarml
+
+[maintainer]: https://avatars.githubusercontent.com/u/556932?s=125
+[maintainer-url]: https://github.com/jescalan
