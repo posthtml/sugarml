@@ -61,11 +61,11 @@ This parser determines how tags are nested based on indentation. For example:
 This would be compiled into the following html output:
 
 ```html
-<div class='first-level'>
-  <div class='second-level'>
-    <div class='third-level'>hi!</div>
+<div class="first-level">
+  <div class="second-level">
+    <div class="third-level">hi!</div>
   </div>
-  <div class='second-level-2'></div>
+  <div class="second-level-2"></div>
 </div>
 ```
 
@@ -100,15 +100,15 @@ Fortunately, it is not advisable to have custom html tags that look anything lik
 There is a shorthand for adding classes and IDs to your tags, which is exactly the same as it is in just about every other whitespace-significant html parser, and the same as CSS. For example:
 
 ```html
-p#main >>> <p id='main'></p>
-p.staff >>> <p class='staff'></p>
-p#main.staff.active >>> <p id='main' class='staff active'></p>
+p#main >>> <p id="main"></p>
+p.staff >>> <p class="staff"></p>
+p#main.staff.active >>> <p id="main" class="staff active"></p>
 ```
 
 You can chain as many classes and IDs in this manner as you want. If you do not use an element name, it will assume you want a div. For example:
 
 ```html
-#main >>> <div id='main'></div>
+#main >>> <div id="main"></div>
 ```
 
 #### Attributes
@@ -116,25 +116,25 @@ You can chain as many classes and IDs in this manner as you want. If you do not 
 Attributes fall between parentheses directly after a tag's name. They are space-separated and can be either boolean (key, no value), or key/value pairs. For example:
 
 ```html
-input(type='text') >>> <input type='text'>
+input(type='text') >>> <input type="text">
 input(checked) >>> <input checked>
-input(type='checkbox' checked) >>> <input type='checkbox' checked>
+input(type='checkbox' checked) >>> <input type="checkbox" checked>
 ```
 
 You can quote your attribute values or not, your choice (although we would recommend quoting). However, if the value contains a space, it must be quoted. For example:
 
 ```html
-div(class=foo) >>> <div class='foo'></div>
-div(class='foo bar') >>> <div class='foo bar'></div>
-div(class=foo bar) >>> <div class='foo' bar></div>
+div(class=foo) >>> <div class="foo"></div>
+div(class='foo bar') >>> <div class="foo bar"></div>
+div(class=foo bar) >>> <div class="foo" bar></div>
 ```
 
 Attributes can contain any character other than `=` or a space. If you value is quoted, it can contain any value other than a quote (that will end the attribute), and if it's not quoted, it can contain any value other than a quote or space. So even attributes with special characters (found sometimes in certain front-end frameworks like vue and angular) work fine. For example:
 
 ```html
-div(:bind='focus') >>> <div :bind='click'></div>
-div(*ngFor='foo in bar') >>> <div *ngFor='foo in bar'></div>
-div(@click='doSomething') >>> <div @click='doSomething'></div>
+div(:bind='focus') >>> <div :bind="click"></div>
+div(*ngFor='foo in bar') >>> <div *ngFor="foo in bar"></div>
+div(@click='doSomething') >>> <div @click="doSomething"></div>
 ```
 
 #### Inline Nested Tags
@@ -227,12 +227,12 @@ posthtml()
   <head>
     <title>Testing</title>
   </head>
-  <body id='index'>
+  <body id="index">
     <h1>Hello world!</h1>
-    <p class='intro'>Wow what a great little language! Some features:</p>
-    <ul data-list='yep' @sortable>
-      <li><a href='#'>whitespace significant!</a></li>
-      <li><a href='#'>simple classes and ids!</a></li>
+    <p class="intro">Wow what a great little language! Some features:</p>
+    <ul data-list="yep" @sortable>
+      <li><a href="#">whitespace significant!</a></li>
+      <li><a href="#">simple classes and ids!</a></li>
     </ul>
     <footer>
       Thanks for visiting
