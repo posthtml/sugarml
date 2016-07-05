@@ -1,4 +1,4 @@
-# SugarML
+# SugarML <img align="right" width="220" height="200" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
 
 [![npm](http://img.shields.io/npm/v/sugarml.svg?style=flat)](https://badge.fury.io/js/sugarml) [![tests](http://img.shields.io/travis/posthtml/sugarml/master.svg?style=flat)](https://travis-ci.org/posthtml/sugarml) [![dependencies](http://img.shields.io/david/posthtml/sugarml.svg?style=flat)](https://david-dm.org/posthtml/sugarml) [![coverage](http://img.shields.io/coveralls/posthtml/sugarml.svg?style=flat)](https://coveralls.io/github/posthtml/sugarml)
 
