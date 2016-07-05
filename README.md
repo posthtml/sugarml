@@ -1,32 +1,16 @@
+# SugarML <img align="right" width="220" height="200" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
+
 [![NPM][npm]][npm-url]
 [![Deps][deps]][deps-url]
 [![Tests][travis]][travis-url]
 [![Coverage][cover]][cover-url]
 [![Standard Code Style][style]][style-url]
 
-<div align="center">
-  <img width="220" height="200" title="PostHTML" src="http://posthtml.github.io/posthtml/logo.svg">
-  <h1>SugarML<h1>
-  <p>PostHTML Sugar Syntax</p>
-</div>
-
-[npm]: http://img.shields.io/npm/v/sugarml.svg?style=flat
-[npm-url]: https://badge.fury.io/js/sugarml
-
-[deps]: http://img.shields.io/david/posthtml/sugarml.svg?style=flat
-[deps-url]: https://david-dm.org/posthtml/sugarml
-
-[travis]: http://img.shields.io/travis/posthtml/sugarml/master.svg?style=flat
-[travis-url]: https://travis-ci.org/posthtml/sugarml
-
-[cover]: http://img.shields.io/coveralls/posthtml/sugarml.svg?style=flat
-[cover-url]: https://coveralls.io/github/posthtml/sugarml
-
 A simple parser for whitespace-significant html, intended for use with [posthtml](https://github.com/posthtml/posthtml).
 
 > **Note:** This project is in early development, and versioning is a little different. [Read this](http://markup.im/#q4_cRZ1Q) for more details.
 
-<h2 align="center">Why should you care?</h2>
+## Why Should You Care?
 
 If you are interesting in using posthtml, but enjoy whitespace-significant html syntax, like jade, slim, etc. You have come to the right place. Alternately, if you are simply looking for a strong alternative to jade for any other reason, read on.
 
@@ -36,7 +20,7 @@ If you are looking for the ability to add expressions, variables, loops, layouts
 
 The source is not very long or complicated and is heavily commented for clarity. Take a look and feel free to contribute!
 
-<h2 align="center">Install</h2>
+## Install
 
 ```bash
 npm i -S sugarml
@@ -44,7 +28,7 @@ npm i -S sugarml
 
 > **Note:** This project is compatible with node v6+ only
 
-<h2 align="center">Usage</h2>
+## Usage
 
 ```js
 'use strict'
@@ -198,7 +182,7 @@ doctype html >>> <!DOCTYPE html>
 doctype HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd" >>> <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 ```
 
-<h2 align="center">Example</h2>
+## Example
 
 **Input:**
 
@@ -257,13 +241,13 @@ posthtml()
   </body>
 </html>
 ```
-<h2 align="center">Maintainer</h2>
+## Maintainer
 
 | [![Jeff Escalante][maintainer]][maintainer-url] |
 |-------------------------------------------------|
 | [Jeff Escalante][maintainer-url]                |
 
-<h2 align="center">LICENSE & CONTRIBUTING</h2>
+## License & Contributing
 
 - Details on the license [can be found here](LICENSE.md)
 - Details on running tests and contributing [can be found here](CONTRIBUTING.md)
