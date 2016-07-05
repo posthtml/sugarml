@@ -10,7 +10,7 @@ A simple parser for whitespace-significant html, intended for use with [posthtml
 
 If you are interesting in using posthtml, but enjoy whitespace-significant html syntax, like jade, slim, etc. You have come to the right place. Alternately, if you are simply looking for a strong alternative to jade for any other reason, read on.
 
-This parser's syntax is heavily inspired by [jade/pug](http://jade-lang.com/). It is a much smaller and simpler version, containing only the bare minimum necessary to write clean whitespace-significant html. It is intended for use as a posthtml plugin, and returns a [posthtml AST](#), but could in theory be used for any other purpose as well.
+This parser's syntax is heavily inspired by [jade/pug](http://jade-lang.com/). It is a much smaller and simpler version, containing only the bare minimum necessary to write clean whitespace-significant html. It is intended for use as a posthtml plugin, and returns a [PostHTML AST](https://github.com/posthtml/posthtml-parser#posthtml-ast-format), but could in theory be used for any other purpose as well.
 
 If you are looking for the ability to add expressions, variables, loops, layouts, etc. you can implement them through other posthtml plugins in addition to this parser. This type of functionality is outside the scope of this parser as it is intended to be light, simple, modular, and accessible to contributors.
 
