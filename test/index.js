@@ -34,6 +34,12 @@ test('comment', (t) => {
   return compare(t, 'comments')
 })
 
+test('invalid token', (t) => {
+  return error('html', (err) => {
+    t.truthy(err === 'Error: Cannot parse character "<" at 1:1')
+  })
+})
+
 function compare (t, name, log) {
   let html, expected
 
@@ -50,4 +56,14 @@ function compare (t, name, log) {
       if (log) console.log(res.html)
       t.is(res.html, expected.trim())
     })
+}
+
+function error (name, cb) {
+  const html = fs.readFileSync(path.join(fixtures, `${name}.html`), 'utf8')
+
+  try {
+    return posthtml().process(html, { parser })
+  } catch (err) {
+    cb(err.toString())
+  }
 }
