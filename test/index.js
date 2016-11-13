@@ -1,69 +1,76 @@
-const parser = require('..')
 const fs = require('fs')
 const path = require('path')
 const test = require('ava')
+
 const posthtml = require('posthtml')
-const fixtures = path.join(__dirname, 'fixtures')
-// const {inspect} = require('util')
+const parser = require('..')()
 
-test('basic coverage example', (t) => {
-  return compare(t, 'simple')
-})
+const fixture = (file) => {
+  return fs.readFileSync(path.join(__dirname, 'fixtures', file), 'utf8')
+}
 
-test('attributes', (t) => {
-  return compare(t, 'attributes')
-})
-
-test('pipe', (t) => {
-  return compare(t, 'pipe')
-})
-
-test('id', (t) => {
-  return compare(t, 'id')
-})
-
-test('class', (t) => {
-  return compare(t, 'class')
-})
-
-test('class and id', (t) => {
-  return compare(t, 'class-id')
-})
-
-test('comment', (t) => {
-  return compare(t, 'comments')
-})
-
-test('invalid token', (t) => {
-  return error('html', (err) => {
-    t.truthy(err === 'Error: Cannot parse character "<" at 1:1')
-  })
-})
+const expect = (file) => {
+  return fs.readFileSync(path.join(__dirname, 'expect', file), 'utf8')
+}
 
 function compare (t, name, log) {
   let html, expected
 
   try {
-    html = fs.readFileSync(path.join(fixtures, `${name}.html`), 'utf8')
-    expected = fs.readFileSync(path.join(fixtures, `expected/${name}.html`), 'utf8')
+    html = fixture(name)
+    expected = expect(name)
   } catch (err) {
     console.error(err)
   }
 
   return posthtml()
-    .process(html, { parser })
-    .then((res) => {
-      if (log) console.log(res.html)
-      t.is(res.html, expected.trim())
+    .process(html, { parser: parser })
+    .then((result) => {
+      if (log) console.log(result.html)
+      t.is(result.html, expected.trim())
     })
 }
 
 function error (name, cb) {
-  const html = fs.readFileSync(path.join(fixtures, `${name}.html`), 'utf8')
+  const html = fixture(name)
 
   try {
-    return posthtml().process(html, { parser })
+    return posthtml().process(html, { parser: parser })
   } catch (err) {
     cb(err.toString())
   }
 }
+
+test('Basic', (t) => {
+  return compare(t, 'index.html')
+})
+
+test('Attrs', (t) => {
+  return compare(t, 'attrs.html')
+})
+
+test('Content', (t) => {
+  return compare(t, 'content.html')
+})
+
+test('ID', (t) => {
+  return compare(t, 'id.html')
+})
+
+test('Class', (t) => {
+  return compare(t, 'class.html')
+})
+
+test('ID&&Class', (t) => {
+  return compare(t, 'class&id.html')
+})
+
+test('Comment', (t) => {
+  return compare(t, 'comment.html')
+})
+
+test('Error', (t) => {
+  return error('index.html', (err) => {
+    t.truthy(err === 'Error: Cannot parse character "<" at 1:1')
+  })
+})
