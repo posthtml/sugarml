@@ -1,30 +1,56 @@
 {
-  "name": "sugarml",
-  "description": "basic parser for whitespace-significant html",
-  "version": "0.1.0",
-  "author": "Jeff Escalante",
+  "name": "posthtml-sugarml",
+  "description": "Sugar Syntax for PostHTML",
+  "version": "1.0.0-alpha",
+  "main": "index.js",
+  "engines": { "npm": ">=3", "node": ">=6" },
+  "scripts": {
+    "lint": "standard",
+    "test": "nyc ava test/index.js",
+    "logs": "standard-changelog > CHANGELOG.md",
+    "docs": "jsdoc2md index.js > INDEX.md",
+    "clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
+    "start": "sudo npm run clean && npm run lint && sudo npm test"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "coveralls": "^2.11.15",
+    "jsdoc-to-markdown": "^2.0.0",
+    "nyc": "^8.4.0",
+    "posthtml": "^0.9.1",
+    "standard": "^8.4.0"
+  },
   "ava": {
     "verbose": "true"
   },
-  "bugs": "https://github.com/posthtml/sugarml/issues",
-  "devDependencies": {
-    "ava": "0.15.x",
-    "coveralls": "2.x",
-    "nyc": "6.x",
-    "posthtml": "jescalan/posthtml#parser-config",
-    "standard": "7.x"
+  "nyc": {
+    "all": true,
+    "include": ["index.js", "lib/"],
+    "extension": [".js"]
   },
-  "engines": {
-    "node": ">= 6.0.0"
+  "keywords": [
+    "sml",
+    "sugarml",
+    "posthtml",
+    "posthtml-parser"
+  ],
+  "author": {
+    "name": "Jeff Escalante",
+    "email": "michael.ciniawsky@gmail.com"
   },
-  "homepage": "https://github.com/posthtml/sugarml",
-  "license": "MIT",
-  "main": "lib",
-  "repository": "posthtml/sugarml",
-  "scripts": {
-    "test": "ava",
-    "lint": "standard",
-    "coverage": "nyc ava",
-    "coveralls": "nyc --reporter=lcov ava && cat ./coverage/lcov.info | coveralls"
-  }
+  "contributors": [
+    {
+      "name": "Michael Ciniawky",
+      "email": "michael.ciniawsky@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/posthtml/posthtml-sugarml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/posthtml/posthtml-sugarml/issues"
+  },
+  "homepage": "https://github.com/posthtml/posthtml-sugarml#readme",
+  "license": "MIT"
 }
