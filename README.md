@@ -258,17 +258,17 @@ posthtml()
 [node]: https://img.shields.io/node/v/posthtml-sugarml.svg
 [node-url]: https://nodejs.org/
 
-[deps]: http://img.shields.io/david/posthtml/posthtml-sugarml.svg
-[deps-url]: https://david-dm.org/posthtml/posthtml-sugarml
+[deps]: http://img.shields.io/david/posthtml/sugarml.svg
+[deps-url]: https://david-dm.org/posthtml/sugarml
 
 [style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
 [style-url]: http://standardjs.com/
 
-[tests]: http://img.shields.io/travis/posthtml/posthtml-sugarml/master.svg
-[tests-url]: https://travis-ci.org/posthtml/posthtml-sugarml
+[tests]: http://img.shields.io/travis/posthtml/sugarml/master.svg
+[tests-url]: https://travis-ci.org/posthtml/sugarml
 
-[cover]: http://img.shields.io/coveralls/posthtml/posthtml-sugarml.svg
-[cover-url]: https://coveralls.io/github/posthtml/posthtml-sugarml
+[cover]: http://img.shields.io/coveralls/posthtml/sugarml.svg
+[cover-url]: https://coveralls.io/github/posthtml/sugarml
 
 [chat]: https://badges.gitter.im/posthtml/posthtml.svg
 [chat-url]: https://gitter.im/posthtml/posthtml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"
