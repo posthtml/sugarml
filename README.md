@@ -17,8 +17,6 @@
 npm i -S posthtml-sugarml
 ```
 
-> **Note:** Currently this project is compatible with Node v6+ only
-
 <h2 align="center">Usage</h2>
 
 ```js
