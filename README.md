@@ -243,6 +243,11 @@ posthtml()
   <tbody>
    <tr>
     <td align="center">
+      <img width="150 height="150" src="https://avatars.githubusercontent.com/u/1510217?v=3&s=150">
+      <br />
+      <a href="https://github.com/voischev">Ivan Voischev</a>
+    </td>
+    <td align="center">
       <img width="150" height="150"
         src="https://avatars.githubusercontent.com/u/5419992?v=3&s=150">
       <br />
