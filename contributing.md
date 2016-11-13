@@ -1,30 +1,60 @@
-# Contributing to sugarml
+You want to help? You rock! Now, take a moment to be sure your contributions make sense to everyone else.
 
-Hello there! First of all, thanks for being interested in sugarml and helping out. We all think you are awesome, and by contributing to open source projects, you are making the world a better place. That being said, there are a few ways to make the process of contributing code to sugarml smoother, detailed below:
+## Reporting Issues
 
-### Filing Issues
+Found a problem? Want a new feature?
 
-If you are opening an issue about a bug, make sure that you include clear steps for how we can reproduce the problem. _If we can't reproduce it, we can't fix it_. If you are suggesting a feature, make sure your explanation is clear and detailed.
+- See if your issue or idea has [already been reported].
+- Provide a [reduced test case] or a [live example].
 
-### Getting Set Up
+Remember, a bug is a _demonstrable problem_ caused by _our_ code.
 
-- Clone the project down
-- Make sure [nodejs](http://nodejs.org) has been installed and is above version `6.x`
-- Run `npm install`
-- Put in work
+## Submitting Pull Requests
 
-### Testing
+Pull requests are the greatest contributions, so be sure they are focused in scope, and do avoid unrelated commits.
 
-This project is constantly evolving, and to ensure that things are secure and working for everyone, we need to have tests. If you are adding a new feature, please make sure to add a test for it. The test suite for this project uses [ava](https://github.com/sindresorhus/ava).
+1. To begin, [fork this project], clone your fork, and add our upstream.
+	```bash
+	# Clone your fork of the repo into the current directory
+	git clone https://github.com/<your-username>/PLUGIN_NAME
+	# Navigate to the newly cloned directory
+	cd PLUGIN_NAME
+	# Assign the original repo to a remote called "upstream"
+	git remote add upstream https://github.com/GITHUB_NAME/PLUGIN_NAME
+	# Install the tools necessary for development
+	npm install
+	```
 
-To run the test suite just use `npm test` or install ava globally and use the `ava` command to run the tests.
+2. Create a branch for your feature or fix:
+	```bash
+	# Move into a new branch for a feature
+	git checkout -b feature/thing
+	```
+	```bash
+	# Move into a new branch for a fix
+	git checkout -b fix/something
+	```
 
-### Code Style
+3. Be sure your code follows our practices.
+	```bash
+	# Test current code
+	npm run test
+	```
 
-This project uses ES6, interpreted directly by node.js. To keep a consistent coding style in the project, we are using [standard js](http://standardjs.com/). In order for tests to pass, all code must pass standard js linting. This project also uses an [editorconfig](http://editorconfig.org/). It will make life much easier if you have the [editorconfig plugin](http://editorconfig.org/#download) for your text editor. For any inline documentation in the code, we're using [JSDoc](http://usejsdoc.org/).
+4. Push your branch up to your fork:
+	```bash
+	# Push a feature branch
+	git push origin feature/thing
+	```
+	```bash
+	# Push a fix branch
+	git push origin fix/something
+	```
 
-### Commit Cleanliness
+5. Now [open a pull request] with a clear title and description.
 
-It's ok if you start out with a bunch of experimentation and your commit log isn't totally clean, but before any pull requests are accepted, we like to have a nice clean commit log. That means [well-written and clear commit messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) and commits that each do something significant, rather than being typo or bug fixes.
-
-If you submit a pull request that doesn't have a clean commit log, we will ask you to clean it up before we accept. This means being familiar with rebasing - if you are not, [this guide](https://help.github.com/articles/interactive-rebase) by github should help you to get started. And if you are still confused, feel free to ask!
+[already been reported]: issues
+[fork this project]:     fork
+[live example]:          http://codepen.io/pen
+[open a pull request]:   https://help.github.com/articles/using-pull-requests/
+[reduced test case]:     https://css-tricks.com/reduced-test-cases/
