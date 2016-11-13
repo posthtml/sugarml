@@ -1,5 +1,21 @@
-src
-test
-contributing.md
-.editorconfig
+# FILES
+
 .travis.yml
+.gitignore
+.editorconfig
+.mversionrc
+
+CHANGELOG.md
+CONTRIBUTING.md
+README.md
+
+npm-debug.log
+
+# DIRECTORIES
+
+.github
+.nyc_output
+
+test
+coverage
+node_modules
