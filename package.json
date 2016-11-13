@@ -1,7 +1,7 @@
 {
   "name": "posthtml-sugarml",
   "description": "Sugar Syntax for PostHTML",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha2",
   "main": "index.js",
   "engines": { "npm": ">=3", "node": ">=6" },
   "scripts": {
