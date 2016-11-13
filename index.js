@@ -1,3 +1,9 @@
+// ------------------------------------
+// #SugarML - INDEX
+// ------------------------------------
+
+'use strict'
+
 const lex = require('./lib/lexer')
 const parse = require('./lib/parser')
 
