@@ -170,6 +170,26 @@ This would render as:
 
 For any type of content transforms that are more complex than this, we recommend checking out [posthtml-content](https://github.com/posthtml/posthtml-content).
 
+#### Comments
+
+You can use buffered `//` and unbuffered `//-` comments. Only buffered comments would be compiled into the html output.
+
+```
+// just some text
+p Paragraph after buffered comment
+
+//- will not output within markup
+p Paragraph after unbuffered comment
+```
+
+This would render as:
+
+```html
+<!-- just some text -->
+<p>Paragraph after buffered comment</p>
+<p>Paragraph after unbuffered comment</p>
+```
+
 <h2 align="center">Example</h2>
 
 ```
